@@ -624,6 +624,7 @@ export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
+    part: Schema.Attribute.Relation<'oneToOne', 'api::part.part'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
