@@ -478,7 +478,6 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
     active: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    category: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -515,7 +514,7 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
         minLength: 1;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    supplier: Schema.Attribute.String & Schema.Attribute.Required;
+    supplier: Schema.Attribute.Relation<'oneToOne', 'api::supplier.supplier'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -542,7 +541,6 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
     active: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    category: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

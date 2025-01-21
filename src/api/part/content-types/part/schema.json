@@ -60,12 +60,9 @@
       "required": true
     },
     "supplier": {
-      "type": "string",
-      "required": true
-    },
-    "category": {
-      "type": "string",
-      "required": true
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::supplier.supplier"
     }
   }
 }
