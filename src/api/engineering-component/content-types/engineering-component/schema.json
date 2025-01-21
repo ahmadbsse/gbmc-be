@@ -24,14 +24,24 @@
       "minLength": 1
     },
     "media": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true,
+      ]
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }

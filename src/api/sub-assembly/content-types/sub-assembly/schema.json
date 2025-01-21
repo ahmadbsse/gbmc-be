@@ -48,6 +48,20 @@
       "type": "text",
       "required": true,
       "minLength": 1
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
     }
   }
 }

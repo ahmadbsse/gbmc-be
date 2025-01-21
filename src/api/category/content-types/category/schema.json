@@ -30,14 +30,19 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "tractor-parts",
-        "sub-assemblies",
+        "tractor_parts",
+        "sub_assemblies",
         "tractors"
       ],
       "required": true
     },
     "description": {
       "type": "richtext"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
