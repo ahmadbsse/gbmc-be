@@ -62,8 +62,7 @@
     "supplier": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::supplier.supplier",
-      "inversedBy": "part"
+      "target": "api::supplier.supplier"
     }
   }
 }

@@ -37,12 +37,6 @@
       "type": "boolean",
       "default": false,
       "required": true
-    },
-    "part": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::part.part",
-      "inversedBy": "supplier"
     }
   }
 }
