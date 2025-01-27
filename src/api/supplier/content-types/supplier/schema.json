@@ -33,11 +33,10 @@
       "type": "richtext",
       "required": false
     },
-    "part": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::part.part",
-      "mappedBy": "supplier"
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

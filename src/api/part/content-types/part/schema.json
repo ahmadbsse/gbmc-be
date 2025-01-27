@@ -49,11 +49,20 @@
       "required": true,
       "minLength": 1
     },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
     "supplier": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::supplier.supplier",
-      "inversedBy": "part"
+      "target": "api::supplier.supplier"
     }
   }
 }
