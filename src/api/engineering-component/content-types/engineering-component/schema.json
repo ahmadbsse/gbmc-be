@@ -28,10 +28,7 @@
       "multiple": true,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "active": {
@@ -43,6 +40,19 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "summary": {
+      "type": "richtext",
+      "required": true
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
 }
