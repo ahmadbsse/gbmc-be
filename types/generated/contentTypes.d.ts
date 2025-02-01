@@ -381,6 +381,9 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -391,8 +394,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       'api::category.category'
     > &
       Schema.Attribute.Private;
-    media: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -400,7 +402,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       }>;
     publishedAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.Enumeration<
-      ['tractor-parts', 'sub-assemblies', 'tractors']
+      ['tractor_parts', 'sub_assemblies', 'tractors']
     > &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -422,6 +424,9 @@ export interface ApiEngineeringComponentEngineeringComponent
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -430,17 +435,18 @@ export interface ApiEngineeringComponentEngineeringComponent
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
+    featured: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    hero_image: Schema.Attribute.Media<'images' | 'videos'> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::engineering-component.engineering-component'
     > &
       Schema.Attribute.Private;
-    media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -448,6 +454,7 @@ export interface ApiEngineeringComponentEngineeringComponent
         minLength: 1;
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    summary: Schema.Attribute.RichText & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -466,6 +473,9 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -474,6 +484,9 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
+    featured: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::part.part'> &
       Schema.Attribute.Private;
@@ -482,11 +495,7 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -523,6 +532,9 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -531,6 +543,9 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
+    featured: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -542,11 +557,7 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    > &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -582,6 +593,9 @@ export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -592,15 +606,13 @@ export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
       'api::supplier.supplier'
     > &
       Schema.Attribute.Private;
-    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
-    part: Schema.Attribute.Relation<'oneToOne', 'api::part.part'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

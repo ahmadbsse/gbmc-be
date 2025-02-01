@@ -38,16 +38,23 @@
       "multiple": true,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "material": {
       "type": "text",
       "required": true,
       "minLength": 1
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
