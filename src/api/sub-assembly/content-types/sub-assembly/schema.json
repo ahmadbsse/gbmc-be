@@ -18,11 +18,6 @@
       "minLength": 1,
       "unique": true
     },
-    "number": {
-      "type": "text",
-      "required": true,
-      "minLength": 1
-    },
     "weight": {
       "type": "string",
       "minLength": 1,
@@ -41,7 +36,7 @@
         "images"
       ]
     },
-    "material": {
+    "oem_number": {
       "type": "text",
       "required": true,
       "minLength": 1
@@ -54,6 +49,10 @@
     "active": {
       "type": "boolean",
       "default": false,
+      "required": true
+    },
+    "number": {
+      "type": "biginteger",
       "required": true
     }
   }

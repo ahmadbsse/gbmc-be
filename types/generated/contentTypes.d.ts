@@ -502,7 +502,8 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    number: Schema.Attribute.Text &
+    number: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    oem_number: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
@@ -552,11 +553,6 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
       'api::sub-assembly.sub-assembly'
     > &
       Schema.Attribute.Private;
-    material: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -564,7 +560,8 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    number: Schema.Attribute.Text &
+    number: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    oem_number: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
