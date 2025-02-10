@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-31T13:39:59.775Z"
+    "x-generation-date": "2025-02-08T11:20:33.921Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -6287,20 +6287,21 @@
           "data": {
             "required": [
               "name",
-              "number",
+              "oem_number",
               "material",
               "weight",
               "media",
               "description",
               "active",
-              "featured"
+              "featured",
+              "number"
             ],
             "type": "object",
             "properties": {
               "name": {
                 "type": "string"
               },
-              "number": {
+              "oem_number": {
                 "type": "string"
               },
               "material": {
@@ -6342,6 +6343,11 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "number": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               },
               "locale": {
                 "type": "string"
@@ -6403,13 +6409,14 @@
         "type": "object",
         "required": [
           "name",
-          "number",
+          "oem_number",
           "material",
           "weight",
           "media",
           "description",
           "active",
-          "featured"
+          "featured",
+          "number"
         ],
         "properties": {
           "id": {
@@ -6421,7 +6428,7 @@
           "name": {
             "type": "string"
           },
-          "number": {
+          "oem_number": {
             "type": "string"
           },
           "material": {
@@ -7240,6 +7247,11 @@
               }
             }
           },
+          "number": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7291,7 +7303,7 @@
                 "name": {
                   "type": "string"
                 },
-                "number": {
+                "oem_number": {
                   "type": "string"
                 },
                 "material": {
@@ -7452,6 +7464,11 @@
                     }
                   }
                 },
+                "number": {
+                  "type": "string",
+                  "pattern": "^\\d*$",
+                  "example": "123456789"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -7528,20 +7545,17 @@
           "data": {
             "required": [
               "name",
-              "number",
               "weight",
               "description",
               "media",
-              "material",
+              "oem_number",
               "featured",
-              "active"
+              "active",
+              "number"
             ],
             "type": "object",
             "properties": {
               "name": {
-                "type": "string"
-              },
-              "number": {
                 "type": "string"
               },
               "weight": {
@@ -7564,7 +7578,7 @@
                   "example": "string or id"
                 }
               },
-              "material": {
+              "oem_number": {
                 "type": "string"
               },
               "featured": {
@@ -7572,6 +7586,11 @@
               },
               "active": {
                 "type": "boolean"
+              },
+              "number": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
               },
               "locale": {
                 "type": "string"
@@ -7633,13 +7652,13 @@
         "type": "object",
         "required": [
           "name",
-          "number",
           "weight",
           "description",
           "media",
-          "material",
+          "oem_number",
           "featured",
-          "active"
+          "active",
+          "number"
         ],
         "properties": {
           "id": {
@@ -7649,9 +7668,6 @@
             "type": "string"
           },
           "name": {
-            "type": "string"
-          },
-          "number": {
             "type": "string"
           },
           "weight": {
@@ -8261,7 +8277,7 @@
               }
             }
           },
-          "material": {
+          "oem_number": {
             "type": "string"
           },
           "featured": {
@@ -8269,6 +8285,11 @@
           },
           "active": {
             "type": "boolean"
+          },
+          "number": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
           },
           "createdAt": {
             "type": "string",
@@ -8319,9 +8340,6 @@
                   "type": "string"
                 },
                 "name": {
-                  "type": "string"
-                },
-                "number": {
                   "type": "string"
                 },
                 "weight": {
@@ -8462,7 +8480,7 @@
                     }
                   }
                 },
-                "material": {
+                "oem_number": {
                   "type": "string"
                 },
                 "featured": {
@@ -8470,6 +8488,11 @@
                 },
                 "active": {
                   "type": "boolean"
+                },
+                "number": {
+                  "type": "string",
+                  "pattern": "^\\d*$",
+                  "example": "123456789"
                 },
                 "createdAt": {
                   "type": "string",

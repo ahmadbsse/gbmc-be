@@ -18,7 +18,7 @@
       "minLength": 1,
       "unique": true
     },
-    "number": {
+    "oem_number": {
       "type": "text",
       "required": true,
       "minLength": 1
@@ -60,6 +60,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::supplier.supplier"
+    },
+    "number": {
+      "type": "biginteger",
+      "required": true
     }
   }
 }
