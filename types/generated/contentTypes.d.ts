@@ -446,6 +446,7 @@ export interface ApiEngineeringComponentEngineeringComponent
       'api::engineering-component.engineering-component'
     > &
       Schema.Attribute.Private;
+    material: Schema.Attribute.Text & Schema.Attribute.Required;
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -458,6 +459,7 @@ export interface ApiEngineeringComponentEngineeringComponent
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    weight: Schema.Attribute.Text & Schema.Attribute.Required;
   };
 }
 

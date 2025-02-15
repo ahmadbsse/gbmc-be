@@ -53,6 +53,14 @@
         "images",
         "videos"
       ]
+    },
+    "material": {
+      "type": "text",
+      "required": true
+    },
+    "weight": {
+      "type": "text",
+      "required": true
     }
   }
 }
