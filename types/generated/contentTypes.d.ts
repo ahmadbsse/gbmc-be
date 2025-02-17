@@ -455,7 +455,6 @@ export interface ApiEngineeringComponentEngineeringComponent
         minLength: 1;
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    summary: Schema.Attribute.RichText & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

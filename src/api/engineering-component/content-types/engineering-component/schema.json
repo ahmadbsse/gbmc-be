@@ -41,10 +41,6 @@
       "default": false,
       "required": true
     },
-    "summary": {
-      "type": "richtext",
-      "required": true
-    },
     "hero_image": {
       "type": "media",
       "multiple": false,
