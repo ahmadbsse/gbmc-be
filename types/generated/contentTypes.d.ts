@@ -369,48 +369,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    description: '';
-    displayName: 'Category';
-    pluralName: 'categories';
-    singularName: 'category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    active: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Private;
-    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    name: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 1;
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.Enumeration<
-      ['tractor_parts', 'sub_assemblies', 'tractors']
-    > &
-      Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiEngineeringComponentEngineeringComponent
   extends Struct.CollectionTypeSchema {
   collectionName: 'engineering_components';
@@ -450,7 +408,6 @@ export interface ApiEngineeringComponentEngineeringComponent
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
@@ -499,7 +456,6 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
@@ -557,7 +513,6 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
     media: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
@@ -607,7 +562,6 @@ export interface ApiSupplierSupplier extends Struct.CollectionTypeSchema {
     media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
@@ -1127,7 +1081,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::category.category': ApiCategoryCategory;
       'api::engineering-component.engineering-component': ApiEngineeringComponentEngineeringComponent;
       'api::part.part': ApiPartPart;
       'api::sub-assembly.sub-assembly': ApiSubAssemblySubAssembly;

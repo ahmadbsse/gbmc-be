@@ -14,7 +14,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "unique": true,
+      "unique": false,
       "minLength": 1,
       "required": true
     },
