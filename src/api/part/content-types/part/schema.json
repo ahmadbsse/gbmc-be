@@ -43,7 +43,7 @@
     },
     "description": {
       "type": "richtext",
-      "required": true,
+      "required": false,
       "minLength": 1
     },
     "active": {
