@@ -389,7 +389,6 @@ export interface ApiEngineeringComponentEngineeringComponent
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
@@ -438,7 +437,6 @@ export interface ApiPartPart extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
@@ -497,7 +495,6 @@ export interface ApiSubAssemblySubAssembly extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
