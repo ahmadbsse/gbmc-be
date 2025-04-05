@@ -53,6 +53,9 @@
     "number": {
       "type": "biginteger",
       "required": true
+    },
+    "pdf": {
+      "type": "json"
     }
   }
 }
