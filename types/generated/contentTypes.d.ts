@@ -415,6 +415,38 @@ export interface ApiEngineeringComponentEngineeringComponent
   };
 }
 
+export interface ApiMarqueeMarquee extends Struct.SingleTypeSchema {
+  collectionName: 'marquees';
+  info: {
+    description: '';
+    displayName: 'Marquee';
+    pluralName: 'marquees';
+    singularName: 'marquee';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    active: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marquee.marquee'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPartPart extends Struct.CollectionTypeSchema {
   collectionName: 'parts';
   info: {
@@ -1070,6 +1102,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::engineering-component.engineering-component': ApiEngineeringComponentEngineeringComponent;
+      'api::marquee.marquee': ApiMarqueeMarquee;
       'api::part.part': ApiPartPart;
       'api::sub-assembly.sub-assembly': ApiSubAssemblySubAssembly;
       'api::supplier.supplier': ApiSupplierSupplier;
