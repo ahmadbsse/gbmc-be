@@ -2,7 +2,7 @@ export default ({ env }) => {
   const isDevelopment = env.bool("IS_DEVELOPMENT", false);
 
   if (isDevelopment) {
-    console.log("Using local upload provider (development mode).");
+    console.log("✅ Using local upload provider (development mode).");
     return {};
   }
 
