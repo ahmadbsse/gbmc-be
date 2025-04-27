@@ -10,14 +10,16 @@ export default ({ env }) => {
   const secretAccessKey = env("AWS_ACCESS_SECRET");
   const region = env("AWS_REGION");
   const bucket = env("AWS_BUCKET");
+  const baseUrl = env("AWS_CLOUDFRONT_URL");
 
-  if (!accessKeyId || !secretAccessKey || !region || !bucket) {
+  if (!accessKeyId || !secretAccessKey || !region || !bucket || !baseUrl) {
     console.error("❌ Missing AWS S3 credentials or configuration.");
     console.error("Make sure the following environment variables are set:");
     console.error(" - AWS_ACCESS_KEY_ID");
     console.error(" - AWS_ACCESS_SECRET");
     console.error(" - AWS_REGION");
     console.error(" - AWS_BUCKET");
+    console.error(" - AWS_CLOUDFRONT_URL");
     return {};
   }
 
@@ -28,6 +30,7 @@ export default ({ env }) => {
       config: {
         provider: "aws-s3",
         providerOptions: {
+          baseUrl,
           s3Options: {
             credentials: {
               accessKeyId,

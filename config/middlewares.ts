@@ -16,6 +16,7 @@ export default [
             "blob:",
             "dl.airtable.com",
             "gbmc-files.s3.eu-central-1.amazonaws.com",
+            "d1m321zr0yue3p.cloudfront.net"
           ],
           "media-src": [
             "'self'",
@@ -23,6 +24,7 @@ export default [
             "blob:",
             "dl.airtable.com",
             "gbmc-files.s3.eu-central-1.amazonaws.com",
+            "d1m321zr0yue3p.cloudfront.net"
           ],
           upgradeInsecureRequests: null,
         },
