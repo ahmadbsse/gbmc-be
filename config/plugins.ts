@@ -36,14 +36,13 @@ export default ({ env }) => {
             region,
           },
           params: {
-            ACL: env("AWS_ACL", "public-read"),
             signedUrlExpires: env.int("AWS_SIGNED_URL_EXPIRES", 15 * 60),
             Bucket: bucket,
           },
         },
         actionOptions: {
-          upload: {},
-          uploadStream: {},
+          upload: { ACL: null },
+          uploadStream: { ACL: null },
           delete: {},
         },
       },
