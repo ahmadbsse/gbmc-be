@@ -1,9 +1,10 @@
+import { Context } from "koa";
 /**
  * A set of functions called "actions" for `touch`
  */
 
 export default {
-  async updateTimestamp(ctx) {
+  async updateTimestamp(ctx: Context) {
     try {
       const { collection, id } = ctx.request.body;
 

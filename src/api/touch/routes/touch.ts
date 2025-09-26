@@ -4,8 +4,7 @@ export default {
       method: "POST",
       path: "/touch",
       handler: "touch.updateTimestamp",
-      config: {
-      },
+      config: {},
     },
   ],
 };
