@@ -31,7 +31,7 @@ export default {
       });
 
       ctx.body = {
-        message: `Order updated successfully`,
+        message: `Timestamp updated successfully`,
         updated_at: updatedEntry.updatedAt,
       };
     } catch (err) {

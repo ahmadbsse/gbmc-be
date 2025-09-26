@@ -5,7 +5,6 @@ export default {
       path: "/touch",
       handler: "touch.updateTimestamp",
       config: {
-        // auth: true, // set to true later if you want auth
       },
     },
   ],
