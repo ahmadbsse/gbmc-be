@@ -6,10 +6,16 @@ import { Context } from "koa";
 export default {
   async updateTimestamp(ctx: Context) {
     try {
-      const { collection, id } = ctx.request.body;
+      const { collection, id, itemName } = ctx.request.body;
 
-      if (!collection || !id) {
-        return ctx.badRequest("collection and id are required");
+      if (!collection) {
+        return ctx.badRequest("collection name is required");
+      }
+      if (!id) {
+        return ctx.badRequest("id is required");
+      }
+      if (!itemName) {
+        return ctx.badRequest("itemName is required");
       }
 
       // Try to resolve full UID
@@ -31,8 +37,17 @@ export default {
         data: {},
       });
 
+      const messageCollection = {
+        part: `Part ${itemName} successfully moved to first`,
+        supplier: `Make ${itemName} successfully moved to first`,
+        "sub-assembly": `Assembly ${itemName} successfully moved to first`,
+        "engineering-component": `Engineering component ${itemName} successfully moved to first`,
+      };
+
       ctx.body = {
-        message: `Timestamp updated successfully`,
+        message:
+          messageCollection[collection] ||
+          `${itemName} successfully moved to first`,
         updated_at: updatedEntry.updatedAt,
       };
     } catch (err) {
