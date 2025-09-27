@@ -1,0 +1,5 @@
+/**
+ * touch service
+ */
+
+export default () => ({});
